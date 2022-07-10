@@ -25,5 +25,8 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     List<Item> findByPriceBetween(Long min, Long max);
 
+    List<Item> findByDateBetweenAndPriceBetween(LocalDate start, LocalDate end, Long min, Long max);
+
+    List<Item> findByDateBetweenOrPriceBetween(LocalDate start, LocalDate end, Long min, Long max);
     // Image를 어떤 형식으로 가져오는지??? // 그냥 주소(String)을 줘야 하나?
 }

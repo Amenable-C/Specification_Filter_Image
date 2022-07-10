@@ -51,6 +51,8 @@ public class SearchController {
         model.addAttribute("itemByOrigin", searchService.searchByOrigin(origin));
         model.addAttribute("itemByDate", searchService.searchByDate(start, end));
         model.addAttribute("itemByPrice", searchService.searchByPrice(min, max));
+        model.addAttribute("itemByDateAndPrice", searchService.searchByDateAndPrice(start, end, min, max));
+        model.addAttribute("itemByDateOrPrice", searchService.searchByDateOrPrice(start, end, min, max));
 
         // 이렇게 다 돌려주고, 프론트쪽에서 요청한 것에 대한 결과값만 쓰면 되지 않을까?
         return "result";

@@ -43,4 +43,12 @@ public class SearchService {
         return items;
     }
 
+    public List<Item> searchByDateAndPrice(LocalDate start, LocalDate end, Long min, Long max){
+        List<Item> items = itemRepository.findByDateBetweenAndPriceBetween(start, end, min, max);
+        return items;
+    }
+    public List<Item> searchByDateOrPrice(LocalDate start, LocalDate end, Long min, Long max){
+        List<Item> items = itemRepository.findByDateBetweenOrPriceBetween(start, end, min, max);
+        return items;
+    }
 }
