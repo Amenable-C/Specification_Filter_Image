@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>itemByName</h3>
+    <div th:if="${name != null}" th:text="'이름 : ' + ${name}"></div>
+    <div th:if="${itemByName != null}" th:each="result : ${itemByName}">
+        <div th:text="${result.id}"></div>
+        <div th:text="${result.name}"></div>
+        <br>
+    </div>
+
+    <h3>itemByContent</h3>
+    <div th:if="${content != null}" th:text="'내용 : ' + ${content}"></div>
+    <div th:if="${itemByContent != null}" th:each="result : ${itemByContent}">
+        <div th:text="${result.id}"></div>
+        <div th:text="${result.Content}"></div>
+        <br>
+    </div>
+
+    <h3>itemByOrigin</h3>
+    <div th:if="${origin != null}" th:text="'Origin : ' + ${origin}"></div>
+    <div th:if="${itemByOrigin != null}" th:each="result : ${itemByOrigin}">
+        <div th:text="${result.id}"></div>
+        <div th:text="${result.origin}"></div>
+        <br>
+    </div>
+
+    <h3>itemByDate</h3>
+    <div th:if="${start != null}" th:text="'시작 시간 : ' + ${start}"></div>
+    <div th:if="${end != null}" th:text="'끝 시간 : ' + ${end}"></div>
+    <div th:if="${itemByDate != null}" th:each="result : ${itemByDate}">
+        <div th:text="${result.id}"></div>
+        <div th:text="${result.date}"></div>
+        <br>
+    </div>
+
+    <h3>itemByPrice</h3>
+    <div th:if="${start != min}" th:text="'최소 가격 : ' + ${min}"></div>
+    <div th:if="${end != max}" th:text="'최대 가격 : ' +${max}"></div>
+    <div th:if="${itemByPrice != null}" th:each="result : ${itemByPrice}">
+        <div th:text="${result.id}"></div>
+        <div th:text="${result.Price}"></div>
+        <br>
+    </div>
+
+</body>
+</html>
