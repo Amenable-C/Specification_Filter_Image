@@ -2,6 +2,7 @@ package com.example.study_3week.repository;
 
 import com.example.study_3week.domain.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
@@ -10,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public interface ItemRepository extends JpaRepository<Item, Long> {
+public interface ItemRepository extends JpaRepository<Item, Long>, JpaSpecificationExecutor<Item> {
 
     //save(), findOne(), findAll(), count(), delete()는 상속하는 것만으로도 제공공
 
@@ -28,5 +29,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     List<Item> findByDateBetweenAndPriceBetween(LocalDate start, LocalDate end, Long min, Long max);
 
     List<Item> findByDateBetweenOrPriceBetween(LocalDate start, LocalDate end, Long min, Long max);
+
     // Image를 어떤 형식으로 가져오는지??? // 그냥 주소(String)을 줘야 하나?
 }

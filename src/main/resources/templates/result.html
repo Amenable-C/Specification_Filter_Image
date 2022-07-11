@@ -5,28 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>itemByName</h3>
-    <div th:if="${name != null}" th:text="'이름 : ' + ${name}"></div>
-    <div th:if="${itemByName != null}" th:each="result : ${itemByName}">
-        <div th:text="${result.id}"></div>
-        <div th:text="${result.name}"></div>
+
+    <h2>itemsBySpec</h2>
+    <div th:if="${name != null}" th:text="'이름 : ' + ${name}"/>
+    <div th:if="${content != null}" th:text="'내용 : ' + ${content}"/>
+    <div th:if="${origin != null}" th:text="'Origin : ' + ${origin}"/>
+    <div th:if="${start != null}" th:text="'시작 시간 : ' + ${start}"/>
+    <div th:if="${end != null}" th:text="'끝 시간 : ' + ${end}"/>
+    <div th:if="${start != min}" th:text="'최소 가격 : ' + ${min}"/>
+    <div th:if="${end != max}" th:text="'최대 가격 : ' +${max}"/>
+    <br>
+    <div th:if="${specResults != null}" th:each="result: ${specResults}">
+        <a th:text="'ID : ' + ${result.id}"/>
+        <a th:text="'//이름 : ' + ${result.name}"/>
+        <a th:text="'//내용 : ' + ${result.content}"/>
+        <a th:text="'//원산지 : ' + ${result.origin}"/>
+        <a th:text="'//날짜 : ' + ${result.date}"/>
+        <a th:text="'//가격 : ' + ${result.price}"/>
     </div>
 
-    <h3>itemByContent</h3>
-    <div th:if="${content != null}" th:text="'내용 : ' + ${content}"></div>
-    <div th:if="${itemByContent != null}" th:each="result : ${itemByContent}">
-        <div th:text="${result.id}"></div>
-        <div th:text="${result.Content}"></div>
-    </div>
-
-    <h3>itemByOrigin</h3>
-    <div th:if="${origin != null}" th:text="'Origin : ' + ${origin}"></div>
-    <div th:if="${itemByOrigin != null}" th:each="result : ${itemByOrigin}">
-        <div th:text="${result.id}"></div>
-        <div th:text="${result.origin}"></div>
-    </div>
-
-    <h3>itemByDate</h3>
+    <h2>itemByFilter</h2>
+    <h4>itemByDate</h4>
     <div th:if="${start != null}" th:text="'시작 시간 : ' + ${start}"></div>
     <div th:if="${end != null}" th:text="'끝 시간 : ' + ${end}"></div>
     <div th:if="${itemByDate != null}" th:each="result : ${itemByDate}">
@@ -35,7 +34,7 @@
     </div>
 
 
-    <h3>itemByPrice</h3>
+    <h4>itemByPrice</h4>
     <div th:if="${start != min}" th:text="'최소 가격 : ' + ${min}"></div>
     <div th:if="${end != max}" th:text="'최대 가격 : ' +${max}"></div>
     <div th:if="${itemByPrice != null}" th:each="result : ${itemByPrice}">
@@ -43,7 +42,7 @@
         <div th:text="${result.Price}"></div>
     </div>
 
-    <h3>itemByDateAndPrice</h3>
+    <h4>itemByDateAndPrice</h4>
     <div th:if="${start != null}" th:text="'시작 시간 : ' + ${start}"></div>
     <div th:if="${end != null}" th:text="'끝 시간 : ' + ${end}"></div>
     <div th:if="${start != min}" th:text="'최소 가격 : ' + ${min}"></div>
@@ -53,7 +52,7 @@
         <div th:text="${result.Price}"></div>
     </div>
 
-    <h3>itemByDateOrPrice</h3>
+    <h4>itemByDateOrPrice</h4>
     <div th:if="${start != null}" th:text="'시작 시간 : ' + ${start}"></div>
     <div th:if="${end != null}" th:text="'끝 시간 : ' + ${end}"></div>
     <div th:if="${start != min}" th:text="'최소 가격 : ' + ${min}"></div>

@@ -63,6 +63,38 @@ public class TestController {
         item5.setPrice(5000L);
         itemRepository.save(item5);
 
+        Item item6 = new Item();
+        item6.setName("한식");
+        item6.setContent("마늘 쌈");
+        item6.setOrigin("한국");
+        item6.setDate(LocalDate.now().minusDays(4));
+        item6.setPrice(2000L);
+        itemRepository.save(item6);
+
+        Item item7 = new Item();
+        item7.setName("한식");
+        item7.setContent("김치 쌈");
+        item7.setOrigin("한국");
+        item7.setDate(LocalDate.now().minusDays(4));
+        item7.setPrice(2000L);
+        itemRepository.save(item7);
+
+        Item item8 = new Item();
+        item8.setName("중식");
+        item8.setContent("마라탕 훠궈 류산슬");
+        item8.setOrigin("중국");
+        item8.setDate(LocalDate.now().minusDays(3));
+        item8.setPrice(3000L);
+        itemRepository.save(item8);
+
+        Item item9 = new Item();
+        item9.setName("중식");
+        item9.setContent("팔보채 고추잡채 샥스핀");
+        item9.setOrigin("중국");
+        item9.setDate(LocalDate.now().minusDays(3));
+        item9.setPrice(3000L);
+        itemRepository.save(item9);
+
         return "home";
     }
 }
