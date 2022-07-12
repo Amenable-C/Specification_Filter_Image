@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Controller
 @RequiredArgsConstructor
@@ -95,6 +94,6 @@ public class TestController {
         item9.setPrice(3000L);
         itemRepository.save(item9);
 
-        return "home";
+        return "index";
     }
 }
