@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Long>, JpaSpecificationExecutor<Item> {
 
-    //save(), findOne(), findAll(), count(), delete()는 상속하는 것만으로도 제공공
+    //save(), findOne(), findAll(), count(), delete()는 상속하는 것만으로도 제공
 
     // 밑에꺼 다 list로 받는게 맞나??? // unique로 설정을 안했는데, 그러면 중복이 가능한데?
     List<Item> findByName(String name);
